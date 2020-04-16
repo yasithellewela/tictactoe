@@ -19,6 +19,17 @@ def gamecheck(nope):
 
 print("TicTacToe")
 end = False
+count = 0
 while not end:
     printBoard(board)
-    end = True
+    turn = input("")
+    turn = turn.split()
+    turn[0] = int(turn[0])
+    turn[1] = int(turn[1])
+    board[turn[1]-1][turn[0]-1] = "X"
+    if count >= 8:
+        end = True
+    if gamecheck(board):
+        end = True
+
+    count += 1
